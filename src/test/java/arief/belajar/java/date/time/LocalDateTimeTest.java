@@ -100,10 +100,15 @@ public class LocalDateTimeTest {
 
     @Test
     void time() {
+
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println(localDateTime);
 
         LocalTime localTime = localDateTime.toLocalTime();
         System.out.println(localTime);
+
+        LocalDateTime result = localTime.atDate(LocalDate.now());
+        System.out.println(result);
+
     }
 }
