@@ -2,7 +2,9 @@ package arief.belajar.java.date.time;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.Month;
 
 public class LocalDateTimeTest {
@@ -82,5 +84,26 @@ public class LocalDateTimeTest {
         System.out.print(localDateTime.getHour() + ":");
         System.out.print(localDateTime.getMinute() + ":");
         System.out.print(localDateTime.getSecond());
+    }
+
+    @Test
+    void date() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
+
+        LocalDate localDate = localDateTime.toLocalDate();
+        System.out.println(localDate);
+
+        LocalDateTime result = localDate.atTime(11,11,11,1100000);
+        System.out.println(result);
+    }
+
+    @Test
+    void time() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
+
+        LocalTime localTime = localDateTime.toLocalTime();
+        System.out.println(localTime);
     }
 }
